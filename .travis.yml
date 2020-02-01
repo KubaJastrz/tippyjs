@@ -1,5 +1,13 @@
-dist: xenial
 language: node_js
 node_js:
-  - 8
-  - lts/*
+  - 10
+  - 12
+deploy:
+  # https://docs.travis-ci.com/user/deployment/pages/
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  target_branch: gh-pages
+  on:
+    branch: master
